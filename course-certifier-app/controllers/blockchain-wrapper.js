@@ -3,6 +3,11 @@ var Web3 = require('web3');
 var socketWrapper = require('./socket-wrapper');
 const Tx = require('ethereumjs-tx');
 
+config.blockchain_endpoint = process.env.BLOCKCHAIN_ENDPOINT;
+config.contract_address = process.env.CONTRACT_ADDRESS;
+config.private_key = process.env.PRIVATE_KEY;
+config.primary_account = process.env.PRIMARY_ACCOUNT;
+
 var web3 = new Web3(new Web3.providers.WebsocketProvider(config.blockchain_endpoint));
 
 // Setup contract instance

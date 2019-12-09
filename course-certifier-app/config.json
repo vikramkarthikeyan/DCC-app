@@ -1,6 +1,6 @@
 {
-    "contract_address": "0x056Eb94bCe6d8e8DA4782F2D147a9e2B2c8b2e3d",
-    "private_key": "d014a4b5e55d2281123377a9f354d54c7e82cdf0b21815be41b9bdd02a347bdc",
-    "primary_account": "0xc29670EE321D72668Ea503a2df09380F901258A5",
-    "blockchain_endpoint": "http://localhost:7545"
+    "contract_address": "",
+    "private_key": "",
+    "primary_account": "",
+    "blockchain_endpoint": ""
 }
