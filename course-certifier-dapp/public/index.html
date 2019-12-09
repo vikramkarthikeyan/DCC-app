@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Course certificate credential provider</title>
+  <link rel="icon" type="image/gif/png" href="img/favicon.png">
+
+  <!-- css -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/nivo-lightbox.css" rel="stylesheet" />
+  <link href="css/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
+  <link href="css/animate.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- template skin -->
+  <link id="t-colors" href="color/default.css" rel="stylesheet">
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+
+  <div id="wrapper">
+
+    <nav class="navbar navbar-custom" role="navigation">
+      <div class="container navigation">
+
+        <div class="navbar-header page-scroll">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+          <a class="navbar-brand" href="index.html">
+                    <img src="img/logo.png" alt="" width="260" height="40" />
+                </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="index.html">Home</a></li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+
+      </div>
+      <!-- /.container -->
+    </nav>
+
+    <!-- Section: intro -->
+    <section id="intro" class="intro">
+      <div class="intro-content top-pad">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 slogan text-center">
+              <div class="wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.2s">
+                <h2>Blockchain-based certificate verification</h2>
+                <p>
+                  Automatic credentialling for UB's certificate programs<br><br/>To get a certificate, students must satisfy all requirements for the program 
+                </p>
+                <div class="divider-short"></div>
+                <h2 class="top-margin">Supported programs</h2>
+              </div>
+              <div class="buttons">
+                <a href="#" class="btn btn-success btn-lg wow fadeInLeft ub-button" id="data-intensive-computing-select" data-wow-duration="2s" data-wow-delay="0.2s">Data Intensive Computing<br /> <small>Check if eligible</small></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- /Section: Result -->
+    <section id="result" class="home-section" display=none>
+
+      <div class="container">
+        <div class="row text-center heading">
+          <h3>Data intensive computing certificate eligibility</h3>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="wow fadeInLeft paddingtop-70 paddingleft-120" data-wow-delay="0.2s">
+              <img src="img/crest.png" alt="" class="img-responsive" width="300"/>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="wow fadeInRight" data-wow-delay="0.3s">
+
+              <div class="features">
+                <span id="pre-requisite-icon"></span>
+                <h5>Pre-requisites</h5>
+                <p id="pre-requisite-result">
+                </p>
+              </div>
+
+              <div class="features">
+                <span id="required-courses-icon"></span>
+                <h5>Required courses</h5>
+                <p id="required-result">
+                </p>
+              </div>
+
+              <div class="features">
+                <span id="gpa-requirement-icon"></span>
+                <h5>GPA</h5>
+                <p id="gpa-result">
+                </p>
+              </div>
+
+              <div class="features">
+                  <span id="project-requirement-icon"></span>
+                  <h5>Capstone project</h5>
+                  <p id="project-result">
+                  </p>
+              </div>
+
+              <div class="features">
+                  <span id="domain-requirement-icon"></span>
+                  <h5>Domain requirement</h5>
+                  <p id="domain-result">
+                  </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="text-center">
+                <button type="submit" id="evaluate-another" title="Evaluate" class="btn btn-success wow btn-lg ub-button">Evaluate another student</button>
+                <button type="submit" title="home" id="home" class="btn btn-success wow btn-lg ub-button">Home</button>
+              </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- /Section: Form submit -->
+    <section id="form" class="home-section paddingtop-100">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <div class="">
+              <div class="row text-center">
+                <div class="col-md-12 col-lg-12">
+                  <div class="wow fadeInUp" data-wow-delay="0.1s">
+                    <div style="padding-bottom:10px">
+                      <h3>Data intensive computing certification</h3>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Person number form start -->
+              <div class="row" id="person-number-form-container">
+                  <div class="col-lg-8 col-lg-offset-2">
+                      <form action="javascript:submitPersonNumber()" role="form" class="person-number-form">
+                          <div class="row">
+
+                            <div class="form-group">
+                              <label for="exampleFormControlInput1">Submit person number to check eligibility and submit courses</label>
+                              <input type="text" class="form-control" id="person-number-field" name="person-number" placeholder="UB Person Number" data-rule="minlen:8" data-msg="Please enter atleast 8 characters">
+                              <div class="validation"></div>
+                            </div>
+                          </div>
+                          <div class="text-center">
+                            <button id="person-number-submit" type="submit" title="Send Message" class="btn btn-lg ub-button wow">Submit</button>
+                            <button id="evaluate" title="Evaluate" class="btn btn-lg wow ub-button">Evaluate eligibility</button>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+
+              <div class="divider-short"></div>
+              <!-- Contact form start -->
+
+              <div class="row" id="course-form-container">
+      
+                <div class="col-lg-8 col-lg-offset-2">
+                    <form action="javascript:addCourse()" role="form" class="course-form">
+
+                        <div class="form-group">
+                          <label for="exampleFormControlSelect1">Select Department</label>
+                          <select class="form-control" id="department">
+                            <option>Computer Science</option>
+                            <option>Other</option>
+                          </select>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="exampleFormControlInput1">Course Number</label>
+                          <input type="text" class="form-control" id="course" name="course" placeholder="Ex: 115" data-rule="minlen:3" data-msg="Please enter atleast 3 characters">
+                          <div class="validation"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Course Grade</label>
+                            <input type="text" class="form-control" id="grade" name="grade" placeholder="Ex: 4.0" data-rule="minlen:1" data-msg="Please enter atleast 1 character">
+                            <div class="validation"></div>
+                        </div>
+
+                        <div class="text-center">
+                        <button title="Send Message" class="btn btn-lg wow ub-button">Submit course</button>
+                        </div>
+                        
+                    </form>
+                  </div>      
+              </div>
+
+              <!-- Contact form ends -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+
+
+      <div class="sub-footer">
+        <div class="container">
+        </div>
+      </div>
+    </footer>
+
+  </div>
+  <a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
+
+  <!-- Core JavaScript Files -->
+  <script src="js/socket.io.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.min.js"></script>
+  <script src="js/wow.min.js"></script>
+  <script src="js/jquery.scrollTo.js"></script>
+  <script src="js/nivo-lightbox.min.js"></script>
+  <script src="js/custom.js"></script>
+  <script src="js/localizations.js"></script>
+
+  <!-- Custom JavaScript Files -->
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>
