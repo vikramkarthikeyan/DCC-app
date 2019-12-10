@@ -3,31 +3,31 @@ var Web3 = require('web3');
 var socketWrapper = require('./socket-wrapper');
 const Tx = require('ethereumjs-tx');
 
-config.blockchain_endpoint = process.env.BLOCKCHAIN_ENDPOINT;
-config.contract_address = process.env.CONTRACT_ADDRESS;
-config.private_key = process.env.PRIVATE_KEY;
-config.primary_account = process.env.PRIMARY_ACCOUNT;
+const blockchain_endpoint = process.env.BLOCKCHAIN_ENDPOINT;
+const contract_address = process.env.CONTRACT_ADDRESS;
+const private_key = process.env.PRIVATE_KEY;
+const primary_account = process.env.PRIMARY_ACCOUNT;
 
-var web3 = new Web3(new Web3.providers.WebsocketProvider(config.blockchain_endpoint));
+var web3 = new Web3(new Web3.providers.WebsocketProvider(blockchain_endpoint));
 
 // Setup contract instance
-var contractArtifact = require('../../../course-certifier-contract/build/contracts/DICCertification.json');
-var contractInstance = new web3.eth.Contract(contractArtifact.abi, config.contract_address);
+var contractArtifact = require('../../course-certifier-contract/build/contracts/DICCertification.json');
+var contractInstance = new web3.eth.Contract(contractArtifact.abi, contract_address);
 
 module.exports = {
 
     // Get current nonce and sign transaction
     signTransaction: function(abi, callback) {
-        web3.eth.getTransactionCount(config.primary_account).then(function(count){
+        web3.eth.getTransactionCount(primary_account).then(function(count){
             let tx = {
               gas: 1000000,
               data: abi,
               value: 0,
               nonce: count,
-              to: config.contract_address
+              to: contract_address
             }
           
-            var privateKey = Buffer.from(config.private_key, 'hex')
+            var privateKey = Buffer.from(private_key, 'hex')
             var transaction = new Tx(tx);
           
             transaction.sign(privateKey);
